@@ -14,8 +14,15 @@ class apt {
     "/etc/apt/sources.list.d/":
       owner => root,
       group => root,
+      notify  => Exec["apt-get update"],
       source => "puppet:///modules/apt/etc/apt/sources.list.d/backports.list";
-
   }
+
+  exec { "apt-get update":
+	  command => 'apt-get update',
+	  path        => "/etc/init.d:/usr/bin:/usr/sbin:/bin:/sbin",
+	  refreshonly => true
+  }
+
 
 }
