@@ -14,7 +14,7 @@ class apt {
     "/etc/apt/sources.list.d/":
       owner => root,
       group => root,
-      source => "puppet:///modules/apt/etc/apt/apt.sources.list.d/backports.list";
+      source => "puppet:///modules/apt/etc/apt/sources.list.d/backports.list";
 
   }
 
