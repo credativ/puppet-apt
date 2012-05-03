@@ -11,7 +11,7 @@ class apt {
       group => root,
       source => "puppet:///modules/apt/etc/apt/apt.conf.d/periodic-updates";
 
-    "/etc/apt/sources.list.d/":
+    "/etc/apt/sources.list.d/backports.list":
       owner => root,
       group => root,
       notify  => Exec["apt-get update"],
