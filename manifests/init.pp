@@ -1,5 +1,6 @@
 class apt {
 	
+  file {
     "/etc/apt/apt.conf.d/local-recommends":
       owner => root,
       group => root,
@@ -15,6 +16,6 @@ class apt {
       group => root,
       source => "puppet:///modules/apt/etc/apt/apt.sources.list.d/backports.list";
 
-    #add backports to sources list
+  }
 
 }
